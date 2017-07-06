@@ -8,7 +8,7 @@ export default class SectionItem extends React.Component{
     render() {
         const {id, imageUrl, name, text, price} = this.props;
         return (
-            <div className="col-md-4">
+            <div className="row col-md-4">
                 <div className="card card-product card-plain">
                     <div className="row card-image">
                         <img src={imageUrl} />

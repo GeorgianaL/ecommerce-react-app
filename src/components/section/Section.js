@@ -37,7 +37,6 @@ export default class Section extends React.Component{
         ];
 
         super(props);
-        // const { sectionTitle } = this.props;
         this.state = {products: JSON.parse(JSON.stringify(products))};
     }
 
@@ -55,9 +54,11 @@ export default class Section extends React.Component{
         )
 
         return (
-            <div>
-                {/*<h4>{props.sectionTitle}</h4>*/}
-                <div className="cardsDiv">
+            <div className="row products-section">
+                <div className="section-title">
+                    <h2>{this.props.sectionTitle}</h2>
+                </div><br/>
+                <div className="cards-div">
                     {cards}
                 </div>
             </div>

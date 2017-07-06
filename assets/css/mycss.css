@@ -16,18 +16,21 @@ h1{
     font-size: 16px;
 }
 
-/* the 3 card in a section */
-.cardsDiv {
-    margin: 5%;
+.section-title {
+    border-bottom: 1px solid #cccccc;
+    color: #999999;
+    display: inline-block;
+    margin-left: 2%;
+    margin-bottom: 3%;
 }
 
-.card-image {
-    padding: 3%;
+.cards-div > .col-md-4 {
+    padding-right: 4%;
+    padding-left: 4%;
 }
 
-.card-product > .content {
-    padding-left: 5%;
-    padding-right: 5%;
+.section-title > h2 {
+    font-size: 36px;
 }
 
 .card-image > img {

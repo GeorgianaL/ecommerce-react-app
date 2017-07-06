@@ -25,8 +25,7 @@ export default class App extends React.Component{
                         </div>
 
                         <section className="container">
-                            {/*<Section sectionTitle="Latest Offers" />*/}
-                            <Section />
+                            <Section sectionTitle="Latest Offers" />
                         </section>
                     </div>
                 </main>
