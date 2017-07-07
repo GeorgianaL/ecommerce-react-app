@@ -2,12 +2,14 @@
  * Created by g.lingurariu on 7/7/2017.
  */
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Section from '../section/Section';
-import ProductPage from '../product/ProductPage';
+
 
 export default class HomePage extends React.Component{
+    constructor() {
+        super();
+    }
 
     render() {
         return (
@@ -26,7 +28,6 @@ export default class HomePage extends React.Component{
                         <section className="container">
                             <Section sectionTitle="Latest Offers" />
                         </section>
-                        <Link to="/product">click!!!</Link>
                     </div>
             </div>
         );

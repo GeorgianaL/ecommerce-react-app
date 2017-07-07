@@ -4,21 +4,23 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
-import App from './components/home/HomePage';
+import App from './containers/App';
+import HomePage from './components/home/HomePage';
 import ProductPage from './components/product/ProductPage';
 import FourOhFour from './containers/FourOhFour';
+import Header from './components/header/Header';
 
-
-// renders the first child <Route> that matches
-
-const Router = () => (
+const MyRouter = () => (
     <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={App} />
-            <Route path="/product" component={ProductPage} />
-            <Route component={FourOhFour}/>
-        </Switch>
+        <div>
+            <App />
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/product" component={ProductPage} />
+                <Route component={FourOhFour} />
+            </Switch>
+        </div>
     </BrowserRouter>
 )
 
-export default Router;
+export default MyRouter;

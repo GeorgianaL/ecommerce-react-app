@@ -1,3 +1,8 @@
+.header {
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
 .small-info {
     margin-top: 5%;
     text-align: center;
@@ -14,6 +19,14 @@ h1{
     text-decoration: none;
     color: #777;
     font-size: 16px;
+}
+
+.link-class {
+    color: inherit;
+}
+
+.link-class:hover {
+    color: inherit;
 }
 
 .section-title {
@@ -49,4 +62,18 @@ h1{
 
 .card-footer > .price {
     color: #9A9A9A;
+}
+
+/* product page */
+
+.product-info-place {
+
+}
+
+.photos-place {
+    background-color: red;
+}
+
+.details-place {
+    background-color: green;
 }
