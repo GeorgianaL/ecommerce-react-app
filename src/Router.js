@@ -4,7 +4,8 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
-import App from './containers/App';
+import App from './components/home/HomePage';
+import ProductPage from './components/product/ProductPage';
 import FourOhFour from './containers/FourOhFour';
 
 
@@ -14,6 +15,7 @@ const Router = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={App} />
+            <Route path="/product" component={ProductPage} />
             <Route component={FourOhFour}/>
         </Switch>
     </BrowserRouter>
