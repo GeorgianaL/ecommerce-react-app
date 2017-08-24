@@ -34,8 +34,8 @@ export default class ProductInfo extends React.Component{
         ];
 
         this.state = {
-            currentSlide: 0,
-            photosData: photosData
+            currentSlide: 0
+            // photosData: photosData
         }
     }
 
@@ -43,7 +43,7 @@ export default class ProductInfo extends React.Component{
         return (
             <div className="product-info-place">
                 <div className="col-md-6">
-                    <Photos photosData={state.photosData} />
+                    {/*<Photos photosData={state.photosData} />*/}
                 </div>
                 <div className="col-md-6">
                     <Details />

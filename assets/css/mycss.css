@@ -15,6 +15,11 @@ h1{
     background-image: url("../assets/img/ecommerce.jpg");
 }
 
+.parallax-image > img {
+    width: 100%;
+    max-height: 500px;
+}
+
 .navbar-nav > li > a {
     text-decoration: none;
     color: #777;

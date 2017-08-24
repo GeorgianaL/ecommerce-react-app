@@ -8,7 +8,6 @@ import App from './containers/App';
 import HomePage from './components/home/HomePage';
 import ProductPage from './components/product/ProductPage';
 import FourOhFour from './containers/FourOhFour';
-import Header from './components/header/Header';
 
 const MyRouter = () => (
     <BrowserRouter>
@@ -21,6 +20,6 @@ const MyRouter = () => (
             </Switch>
         </div>
     </BrowserRouter>
-)
+);
 
 export default MyRouter;
