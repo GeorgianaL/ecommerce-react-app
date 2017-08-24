@@ -5,13 +5,15 @@ import React from 'react';
 
 import SectionContainer from '../../containers/SectionContainer';
 
+import Filters from '../filters/Filters';
+
 
 export default class HomePage extends React.Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
-
     render() {
+        console.log(this.props.priceAsc);
         return (
             <div className="wrapper">
                 <div className="parallax">
@@ -25,6 +27,10 @@ export default class HomePage extends React.Component{
                 </div>
                 <section className="container">
                     <SectionContainer sectionTitle="Latest Offers" />
+                    <details>
+                        <summary>Designer</summary>
+                        <Filters data={this.props.brands} />
+                    </details>
                 </section>
             </div>
         );

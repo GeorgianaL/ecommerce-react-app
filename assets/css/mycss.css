@@ -82,3 +82,7 @@ h1{
 .details-place {
     background-color: green;
 }
+
+.brand-filter {
+    list-style-type: none;
+}
