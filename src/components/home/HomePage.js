@@ -6,6 +6,7 @@ import React from 'react';
 import SectionContainer from '../../containers/SectionContainer';
 
 import Filters from '../filters/Filters';
+import Checkbox from '../checkbox/Checkbox';
 
 
 export default class HomePage extends React.Component{
@@ -13,11 +14,11 @@ export default class HomePage extends React.Component{
         super(props);
     }
     render() {
-        console.log(this.props.priceAsc);
+        console.log(this.props);
         return (
             <div className="wrapper">
-                <div className="parallax">
-                    <div className="img-responsive parallax-image">
+                <div className="parallax filter-black">
+                    <div className="parallax-image">
                         <img src="../../assets/assets/img/ecommerce.jpg" />
                     </div>
                     <div className="small-info">
@@ -29,7 +30,12 @@ export default class HomePage extends React.Component{
                     <SectionContainer sectionTitle="Latest Offers" />
                     <details>
                         <summary>Designer</summary>
-                        <Filters data={this.props.brands} />
+                        <Filters data={this.props.brands} cb={this.props.setFilterDesigner} />
+                    </details>
+                    <details>
+                        <summary>Price</summary>
+                        <input type="radio" />Ascending
+                        <input type="radio" />Descending
                     </details>
                 </section>
             </div>

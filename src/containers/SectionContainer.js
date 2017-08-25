@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import Section from '../components/section/Section';
+import { filteredProducts } from '../selectors/ProductSelectors';
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products
+        products: filteredProducts(state)
     };
 };
 

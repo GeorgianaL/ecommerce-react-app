@@ -5,6 +5,12 @@ export default class Filters extends React.Component{
 
     constructor(props) {
         super(props);
+        this.handleCheckedValue = this.handleCheckedValue.bind(this);
+    }
+
+    handleCheckedValue(value, checked) {
+        console.log(this.props);
+        this.props.cb(value, checked);
     }
 
     render() {
@@ -18,6 +24,7 @@ export default class Filters extends React.Component{
                                     <Checkbox
                                         value={item}
                                         label={item}
+                                        cb={this.handleCheckedValue}
                                     />
                                 </li>
                             );

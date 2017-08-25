@@ -1,0 +1,11 @@
+export const SET_FILTER_DESIGNER = "SET_FILTER_DESIGNER";
+
+export function setFilterDesigner(designerName, checked) {
+    return {
+        "type": SET_FILTER_DESIGNER,
+        "payload": {
+            value: designerName,
+            checked
+        }
+    }
+}

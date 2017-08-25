@@ -46,5 +46,6 @@ module.exports = {
                 use: [{loader: "file-loader"}]
             }
         ]
-    }
+    },
+    devtool: 'source-map',
 };

@@ -15,13 +15,11 @@ export default class App extends React.Component{
 
     render() {
         return (
-            <div className="app ecommerce">
-                <header className="header">
+            <div>
+                <header className="navbar navbar-fixed-top navbar-transparent">
                     <Header />
                 </header>
-                <main>
-                    {this.childrenWithProps()}
-                </main>
+                {this.childrenWithProps()}
             </div>
         );
     }

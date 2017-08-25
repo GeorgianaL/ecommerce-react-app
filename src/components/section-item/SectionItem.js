@@ -7,30 +7,42 @@ import ProductPage from '../product/ProductPage';
 import { Link } from 'react-router-dom';
 
 export default class SectionItem extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        const {id, imageUrl, name, text, price} = this.props;
+        console.log(this.props.oldPrice);
         return (
             <div className="row col-md-4">
                 <Link to="/product" className="link-class">
                     <div className="card card-product card-plain">
                         <div className="row card-image">
-                            <img src={imageUrl} />
+                            <img src={this.props.imageUrl} />
                         </div>
                         <div className="content">
                             <div className="row">
-                                <h4 className="brand">{name}</h4>
+                                <h4 className="brand">{this.props.name}</h4>
                             </div>
                             <div className="row">
                                 <div className="short-description">
-                                    <p>{text}</p>
+                                    <p>{this.props.text}</p>
                                 </div>
                             </div>
-                            <div className="row card-footer">
-                                <div className="price">
-                                    {price}
-                                </div>
-                                {/*<div className="price price-old"></div>*/}
-                                {/*<div className="price price-new"></div>*/}
+                            <div className="row card-footer col-md-12">
+                                    {
+                                        this.props.oldPrice && this.props.oldPrice > this.props.price
+                                            ?
+                                            <div className="price">
+                                                <div className="col-md-3 old-price">{'€ '.concat(this.props.oldPrice.toString())}</div>
+                                                <div className="col-md-3 new-price">{'€ '.concat(this.props.price.toString())}</div>
+                                            </div>
+                                            :
+                                            <div className="col-md-6 price">{'€ '.concat(this.props.price.toString())}</div>
+                                    }
+                                    <button className="col-md-6 btn btn-simple wishlist-btn pull-right" id="wishlist-btn">
+                                        <i className="fa fa-heart-o">Wishlist</i>
+                                    </button>
                             </div>
                         </div>
                     </div>

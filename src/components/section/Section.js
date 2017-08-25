@@ -18,9 +18,10 @@ export default class Section extends React.Component{
             <SectionItem
                 key={product.id}
                 imageUrl={product.imageUrl}
-                name={product.name}
+                name={product.brandName}
                 text={product.text}
                 price={product.price}
+                oldPrice={product.oldPrice}
             />
 
         );
