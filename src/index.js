@@ -8,9 +8,10 @@ import thunk from 'redux-thunk';
 import MyRouter from './Router';
 import { productReducer } from './reducers/products.reducer';
 
-import '../assets/css/mycss.css';
+import '../assets/mycss/mycss.css';
 import '../assets/assets/css/demo.css';
 import '../assets/assets/css/gsdk.css';
+import '../assets/bootstrap3/css/font-awesome.css';
 
 const rootReducer = combineReducers({
     products: productReducer

@@ -1,4 +1,4 @@
-import { SET_FILTER_DESIGNER } from '../actions/filtersActions';
+import {SET_FILTER_CLOTHING, SET_FILTER_DESIGNER, SET_FILTER_COLOR, SET_FILTER_PRICE} from '../actions/filtersActions';
 
 const inititalState = {
     products: [
@@ -36,7 +36,7 @@ const inititalState = {
         "id": 4,
         "imageUrl": "../../../assets/assets/img/ecommerce8.jpg",
         "brandName": "Lutwyche",
-        "text": "Blue check wool and cashmere-blend blazer",
+        "text": "Blue check wool and cashmere-blend blazer. Cut in a trim yet comfortable regular fit.",
         "price": 799,
         "clothing": "Jacket",
         "colors": ["Blue"]
@@ -45,7 +45,7 @@ const inititalState = {
         "id": 5,
         "imageUrl": "../../../assets/assets/img/ecommerce9.jpg",
         "brandName": "Cannali",
-        "text": "Blue water-resistant wool travel blazer",
+        "text": "Blue water-resistant wool travel blazer. Cut in a trim yet comfortable regular fit.",
         "price": 699,
         "oldPrice": 799,
         "clothing": "Jacket",
@@ -55,7 +55,7 @@ const inititalState = {
         "id": 6,
         "imageUrl": "../../../assets/assets/img/product-page5.jpg",
         "brandName": "Lutwyche",
-        "text": "Brown check wool and cashmere-blend blazer",
+        "text": "Brown check wool and cashmere-blend blazer. Cut in a trim yet comfortable regular fit.",
         "price": 399,
         "oldPrice": 499,
         "clothing": "Jacket",
@@ -83,6 +83,40 @@ export function productReducer(state = inititalState, action) {
                     filters: filtersArray
                 }
             }
+        case SET_FILTER_CLOTHING:
+            if (action.payload.checked) {
+                return {
+                    ...state,
+                    filters:
+                        [...state.filters, action.payload.value]
+                }
+            } else {
+                const filtersArray = state.filters;
+                const index = filtersArray.indexOf(action.payload.value);
+                filtersArray.splice(index, 1);
+                return {
+                    ...state,
+                    filters: filtersArray
+                }
+            }
+        case SET_FILTER_COLOR:
+            if (action.payload.checked) {
+                return {
+                    ...state,
+                    filters:
+                        [...state.filters, action.payload.value]
+                }
+            } else {
+                const filtersArray = state.filters;
+                const index = filtersArray.indexOf(action.payload.value);
+                filtersArray.splice(index, 1);
+                return {
+                    ...state,
+                    filters: filtersArray
+                }
+            }
+        case SET_FILTER_PRICE:
+
     };
     return state;
 }

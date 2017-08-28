@@ -55,7 +55,6 @@ export const getColor = createSelector(
         products.forEach((product) => {
             colors = colors.concat(product.colors);
         });
-        console.log(colors);
         return colors.filter((item, index, array) => array.indexOf(item) == index);
     }
 );
@@ -68,6 +67,12 @@ export const filteredProducts = createSelector(
         } else {
             let filteredArray = products.filter((product) => {
                 if(filters.includes(product.brandName)) {
+                    return product;
+                }
+                if(filters.includes(product.clothing)) {
+                    return product;
+                }
+                if(filters.some(r=> product.colors.includes(r))) {
                     return product;
                 }
             });

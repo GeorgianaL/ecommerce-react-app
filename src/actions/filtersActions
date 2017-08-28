@@ -1,4 +1,7 @@
 export const SET_FILTER_DESIGNER = "SET_FILTER_DESIGNER";
+export const SET_FILTER_CLOTHING = "SET_FILTER_CLOTHING";
+export const SET_FILTER_COLOR = "SET_FILTER_COLOR";
+export const SET_FILTER_PRICE ="SET_FILTER_PRICE";
 
 export function setFilterDesigner(designerName, checked) {
     return {
@@ -9,3 +12,33 @@ export function setFilterDesigner(designerName, checked) {
         }
     }
 }
+
+export function setFilterClothing(clothingName, checked) {
+    return {
+        "type": SET_FILTER_CLOTHING,
+        "payload": {
+            value: clothingName,
+            checked
+        }
+    }
+}
+
+export function setFilterColor(colorName, checked) {
+    return {
+        "type": SET_FILTER_COLOR,
+        "payload": {
+            value: colorName,
+            checked
+        }
+    }
+}
+
+export function setFilterPrice(priceOrderSelected) {
+    return {
+        "type": SET_FILTER_PRICE,
+        "payload": {
+            value: priceOrderSelected,
+        }
+    }
+}
+

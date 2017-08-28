@@ -2,11 +2,8 @@
  * Created by g.lingurariu on 7/7/2017.
  */
 import React from 'react';
-
 import SectionContainer from '../../containers/SectionContainer';
-
-import Filters from '../filters/Filters';
-import Checkbox from '../checkbox/Checkbox';
+import FiltersContainer from '../../containers/FiltersContainer';
 
 
 export default class HomePage extends React.Component{
@@ -14,7 +11,6 @@ export default class HomePage extends React.Component{
         super(props);
     }
     render() {
-        console.log(this.props);
         return (
             <div className="wrapper">
                 <div className="parallax filter-black">
@@ -28,15 +24,7 @@ export default class HomePage extends React.Component{
                 </div>
                 <section className="container">
                     <SectionContainer sectionTitle="Latest Offers" />
-                    <details>
-                        <summary>Designer</summary>
-                        <Filters data={this.props.brands} cb={this.props.setFilterDesigner} />
-                    </details>
-                    <details>
-                        <summary>Price</summary>
-                        <input type="radio" />Ascending
-                        <input type="radio" />Descending
-                    </details>
+                    <FiltersContainer />
                 </section>
             </div>
         );

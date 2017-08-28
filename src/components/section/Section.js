@@ -26,11 +26,11 @@ export default class Section extends React.Component{
 
         );
         return (
-            <div className="row products-section">
+            <div className="products-section">
                 <div className="section-title">
                     <h2>{this.props.sectionTitle}</h2>
                 </div><br/>
-                <div className="cards-div">
+                <div className="cards-div flex-row row">
                     {cards}
                 </div>
             </div>
