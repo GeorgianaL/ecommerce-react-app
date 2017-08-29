@@ -121,6 +121,10 @@
     font-size: 1.8rem;
 }
 
+.single-price {
+    padding: 0.2em;
+}
+
 #wishlist-btn {
     color: red;
     display: none;
@@ -163,19 +167,9 @@
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.select-filter > select > option {
+    padding: 0.5em;
+}
 
 /* product page */
 

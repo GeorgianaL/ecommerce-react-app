@@ -40,7 +40,7 @@ export default class SectionItem extends React.Component{
                                 <div className="new-price pull-right">{'€ '.concat(this.props.price.toString())}</div>
                             </div>
                             :
-                            <div className="price">{'€ '.concat(this.props.price.toString())}</div>
+                            <div className="price single-price">{'€ '.concat(this.props.price.toString())}</div>
                     }
                     <button className="btn btn-simple wishlist-btn pull-right" id="wishlist-btn">
                          <i className="fa fa-heart-o"> Wishlist</i>

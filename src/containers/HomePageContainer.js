@@ -3,7 +3,7 @@ import HomePage from '../components/home/HomePage';
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.products,
+        products: state.products.products
     };
 };
 

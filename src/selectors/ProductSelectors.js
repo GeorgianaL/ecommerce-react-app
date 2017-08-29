@@ -8,6 +8,10 @@ const getFilters = (state) => {
     return state.products.filters;
 };
 
+const getSortType = (state) => {
+    return state.products.sorting;
+}
+
 export const getBrands = createSelector(
     [getProducts],
     (products) => {
@@ -18,23 +22,21 @@ export const getBrands = createSelector(
     }
 );
 
-export const orderProductsByPriceAsc = createSelector(
+export const getPrice = createSelector(
     [getProducts],
     (products) => {
         const prices = products.map((product) => {
             return product.price;
         });
-        return prices.sort();
+        return prices;
     }
 );
 
-export const orderProductsByPriceDesc = createSelector(
+export const sortedProducts = createSelector(
     [getProducts],
-    (products) => {
-        const prices = products.map((product) => {
-            return product.price;
-        });
-        return prices.sort().reverse();
+    (products, sortKey) => {
+        let sortedProducts = sortProducts(products, sortKey);
+        return sortedProducts;
     }
 );
 
@@ -60,12 +62,13 @@ export const getColor = createSelector(
 );
 
 export const filteredProducts = createSelector(
-    [getProducts, getFilters],
-    (products, filters) => {
+    [getProducts, getFilters, getSortType],
+    (products, filters, sortType) => {
+        let filteredArray = [];
         if (filters.length === 0) {
-            return products;
+            filteredArray = products;
         } else {
-            let filteredArray = products.filter((product) => {
+            filteredArray = products.filter((product) => {
                 if(filters.includes(product.brandName)) {
                     return product;
                 }
@@ -76,7 +79,15 @@ export const filteredProducts = createSelector(
                     return product;
                 }
             });
-            return filteredArray;
         }
+        const myArray = filteredArray.sort((a, b) => {
+            if(sortType === "priceAsc") {
+                return a.price > b.price ? 1 : a.price < b.price ? -1 : 0;
+            } else {
+                return a.price > b.price ? -1 : a.price < b.price ? 1 : 0;
+            }
+        });
+        console.log(myArray);
+        return myArray;
     }
 );

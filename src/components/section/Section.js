@@ -26,7 +26,7 @@ export default class Section extends React.Component{
 
         );
         return (
-            <div className="products-section">
+            <div className="products-section col-md-9">
                 <div className="section-title">
                     <h2>{this.props.sectionTitle}</h2>
                 </div><br/>

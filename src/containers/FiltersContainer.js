@@ -2,20 +2,16 @@ import { connect } from 'react-redux';
 import Filters from '../components/filters/Filters';
 import {
     getBrands,
-    orderProductsByPriceAsc,
-    orderProductsByPriceDesc,
     getClothing,
-    getColor,
+    getColor
 } from '../selectors/ProductSelectors';
-import {setFilterClothing, setFilterDesigner, setFilterColor} from '../actions/filtersActions';
+import {setFilterClothing, setFilterDesigner, setFilterColor, setFilterPrice} from '../actions/filtersActions';
 
 const mapStateToProps = (state) => {
     return {
         brands: getBrands(state),
-        priceAsc: orderProductsByPriceAsc(state),
-        priceDesc: orderProductsByPriceDesc(state),
         clothing: getClothing(state),
-        colors: getColor(state),
+        colors: getColor(state)
     };
 };
 
@@ -29,6 +25,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         setFilterColor: (value, checked) => {
             dispatch(setFilterColor(value, checked));
+        },
+        setFilterPrice: (value) => {
+            dispatch(setFilterPrice(value));
         },
     }
 };

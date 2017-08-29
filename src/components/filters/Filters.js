@@ -1,14 +1,19 @@
 import React from 'react';
 import Filter from './Filter';
+import Select from '../select/Select';
 
 
 export default class Filters extends React.Component{
     constructor(props) {
         super(props);
+        this.handleOrderSelected = this.handleOrderSelected.bind(this);
+    }
+
+    handleOrderSelected(value) {
+        this.props.cb(value);
     }
 
     render() {
-        console.log('filters', this.props);
         return (
         <div className="col-md-3 filters-div">
             <div className="card">
@@ -24,10 +29,15 @@ export default class Filters extends React.Component{
                             <Filter title="Color" data={this.props.colors} cb={this.props.setFilterColor} />
                         </div>
                         <div className="panel panel-default">
-                            <Filter title="Clothing" data={this.props.clothing} cb={this.props.setFilterClothing}/>
+                            <Filter title="Clothing" data={this.props.clothing} cb={this.props.setFilterClothing} />
                         </div>
                         <div className="panel panel-default">
-                            <Select title="Price" />
+                            <Select
+                                title="Price"
+                                data={this.props.prices}
+                                CB={this.handleOrderSelected}
+                                cb={this.props.setFilterPrice}
+                            />
                         </div>
                     </div>
                 </div>

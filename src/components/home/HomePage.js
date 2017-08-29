@@ -23,8 +23,8 @@ export default class HomePage extends React.Component{
                     </div>
                 </div>
                 <section className="container">
-                    <SectionContainer sectionTitle="Latest Offers" />
                     <FiltersContainer />
+                    <SectionContainer sectionTitle="Latest Offers" />
                 </section>
             </div>
         );

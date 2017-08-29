@@ -4,7 +4,8 @@ import { filteredProducts } from '../selectors/ProductSelectors';
 
 const mapStateToProps = (state) => {
     return {
-        products: filteredProducts(state)
+        products: filteredProducts(state),
+        filter: state.products.sorting,
     };
 };
 

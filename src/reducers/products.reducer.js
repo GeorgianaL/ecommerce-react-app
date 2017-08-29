@@ -62,7 +62,8 @@ const inititalState = {
         "colors": ["Brown"]
     }
     ],
-    filters: []
+    filters: [],
+    sorting: "priceAsc"
 };
 
 export function productReducer(state = inititalState, action) {
@@ -116,7 +117,11 @@ export function productReducer(state = inititalState, action) {
                 }
             }
         case SET_FILTER_PRICE:
-
-    };
-    return state;
+            return {
+                ...state,
+                sorting: action.payload.value
+            }
+        default:
+            return state;
+    }
 }
