@@ -58,6 +58,7 @@
     display: inline-block;
     margin-left: 2%;
     margin-bottom: 3%;
+    margin-top: 5%;
 }
 
 .cards-div > .col-md-4 {
@@ -94,6 +95,7 @@
     height: 40px;
     bottom: 0px;
     display: inline-block;
+    margin-left: 4%;
 }
 
 .short-description {
@@ -141,34 +143,79 @@
     padding-left: 0px;
 }
 
+
 .panel-heading > h2 {
     padding-left: 0px;
     text-transform: uppercase;
 }
 
-.filter-item:hover,
-.checked-item {
-    color: #2a6496;
-}
-
-.filter-item > input,
-.filter-item > label {
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-}
-
-.filter-item > label {
-    margin-left: 0.8em;
-}
-
-.filter-item > input {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
 .select-filter > select > option {
     padding: 0.5em;
+}
+
+/* checkbox styles */
+.control {
+    display: block;
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 15px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.control input {
+    opacity: 0;
+}
+
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E9E1E1;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #FFFFFF;
+}
+
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #FFFFFF;
+}
+.control input:disabled ~ .control_indicator {
+    background: #DFDFDF;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 6px;
+    top: 1px;
+    width: 4px;
+    height: 12px;
+    border: solid #F6B13B;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #7b7b7b;
+}
+/**/
+
+.panel-group > .panel:last-child {
+    border-bottom: 0;
 }
 
 /* product page */

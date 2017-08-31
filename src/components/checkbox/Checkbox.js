@@ -21,12 +21,11 @@ export default class Checkbox extends React.Component{
     render() {
         return(
             <div className="filter-item">
-                <input
-                    type="checkbox"
-                    checked={this.state.isChecked}
-                    onChange={this.handleCheckbox}
-                />
-                <label className={this.state.isChecked ? 'checked-item' : ''}>{this.props.value}</label>
+                <label className="control control-checkbox">
+                    {this.props.value}
+                    <input type="checkbox" checked={this.state.isChecked} onChange={this.handleCheckbox} />
+                    <div className="control_indicator"></div>
+                </label>
             </div>
         );
     }
